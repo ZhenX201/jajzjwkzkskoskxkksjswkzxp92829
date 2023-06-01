@@ -1,0 +1,23 @@
+local player = game.Players.LocalPlayer
+
+local character = player.Character or player.CharacterAdded:Wait()
+
+local part = Instance.new("Part")
+
+part.BrickColor = BrickColor.new("Bright blue")
+
+part.Size = Vector3.new(5, 5, 5)
+
+while true do
+
+    local position = character.PrimaryPart.Position
+
+    local randomOffset = Vector3.new(math.random(-10, 10), math.random(-10, 10), math.random(-10, 10))
+
+    part:Clone().Parent = workspace
+
+    part.Position = position + randomOffset
+
+    wait(0.1) -- Adjust the delay between spawns as desired
+
+end
